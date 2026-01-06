@@ -24,7 +24,7 @@ def display_analitic():
     score_categorie = {"high": "3", "medium": "2", "low": "1"}
     player_scores = {'alice': 2300, 'bob': 1800, 'charlie': 2150}
     total_achievements = {'alice': 5, 'bob': 3, 'charlie': 7}
-    print("=== List Comprehension Examples ===")
+    print("=== List Comprehension ===")
     double = [4600, 3600, 4300, 4100]
     high_score = []
     active_players = []
@@ -37,10 +37,11 @@ def display_analitic():
     print(f"Scores doubled: {double}")
     print(f"Active players: {active_players}")
     
-    print("\n=== Dict Comprehension Examples ===") 
+    print("\n=== Dict Comprehension ===") 
     print(f"Player scores: {player_scores}")
     print(f"Score categories: {score_categorie}")
     print(f"Achievement counts: {total_achievements}")
-    print("\n=== Set Comprehension Examples ===")
+    print("\n=== Set Comprehension ===")
+
 
 display_analitic()
