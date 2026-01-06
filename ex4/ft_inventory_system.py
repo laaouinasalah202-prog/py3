@@ -40,7 +40,7 @@ def ft_inventory_system():
     print("\n=== Transaction: Alice gives Bob 2 potions ===")
     print(f"Alice potions: {alice["potion"]["number"]}")
     print(f"bob potions: {bob["potion"]["number"]}")
-   
+
     print("\n=== Inventory Analytics ===")
     print(f"Most valuable player: Alice ({s} gold)")
     print(f"Most items: Alice ({count} items)")
