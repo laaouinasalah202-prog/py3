@@ -20,12 +20,12 @@ def AchievementTracker():
                 }
             }
 
-    print(f"Player alice achievements: {players["alice"]}")
-    print(f"Player alice achievements: {players["bob"]} ")
-    print(f"Player alice achievements: {players["charlie"]}\n")
+    print(f"Player alice achievements: {players['alice']}")
+    print(f"Player bob achievements: {players['bob']} ")
+    print(f"Player charlie achievements: {players['charlie']}\n")
     b = set.union(players["alice"], players["bob"], players["charlie"])
     print("=== Achievement Analytics ===")
-    print(f"Common to all players: {b}")
+    print(f"All unique achievements: {b}")
     print(f"Total unique achievements: {len(b)}\n")
     f = set.intersection(players["alice"], players["bob"], players["charlie"])
     print(f"Common to all players: {f}")
@@ -40,9 +40,9 @@ def AchievementTracker():
     }
     print(f"Rare achievements (1 player): {rare}\n")
     print(f"Alice vs Bob common: "
-          f"{set.intersection(players["alice"], players["bob"])}")
-    print(f"Alice unique: {set.difference(players["alice"], players["bob"])}")
-    print(f"Bob unique: {set.difference(players["bob"], players["alice"])}")
+          f"{set.intersection(players['alice'], players['bob'])}")
+    print(f"Alice unique: {set.difference(players['alice'], players['bob'])}")
+    print(f"Bob unique: {set.difference(players['bob'], players['alice'])}")
 
 
 AchievementTracker()

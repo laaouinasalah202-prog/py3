@@ -1,22 +1,37 @@
 import math
-import sys
+
 
 def starting(pos1):
     pos0 = (0, 0, 0)
     print(f"Position created: {pos1}")
-    distance1 = float(round(math.sqrt((pos1[0] - pos0[0])**2 + (pos1[1] - pos0[1])**2 + (pos1[2] - pos0[2])**2)))
+    distance1 = float(
+            math.sqrt(
+                (pos1[0] - pos0[0])**2
+                + (pos1[1] - pos0[1])**2
+                + (pos1[2] - pos0[2])**2
+                )
+            )
     print(f"Distance between {pos0} and {pos1}: {round(distance1, 2)}\n")
 
+
 def parsing(coors):
+    pos0 = (0, 0, 0)
     try:
         pos2 = tuple(coors.split(","))
-        distance2= float(round(math.sqrt((pos2[0] - pos0[0])**2 + (pos2[1] - pos0[1])**2 + (pos2[2] - pos0[2])**2)))
+        distance2 = float(
+                math.sqrt(
+                    (pos2[0] - pos0[0])**2
+                    + (pos2[1] - pos0[1])**2
+                    + (pos2[2] - pos0[2])**2
+                    )
+                )
         print(f"Parsed position: {pos2}")
         print(f"Distance between {pos0} and {pos2}: {round(distance2, 2)}")
     except Exception as e:
         print(f"Error parsing coordinate: {e}")
         print(f"Error details - Type: ValueError, Args: {e}\n")
     return pos2
+
 
 def nUnpacking(p2):
     print("\nUnpacking demonstration:")
@@ -33,5 +48,6 @@ def gameStart():
     print('Parsing invalid coordinates: "abc,def,ghi"')
     parsing("abc,def,ghi")
     nUnpacking(a)
+
 
 gameStart()
