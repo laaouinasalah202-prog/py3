@@ -1,47 +1,76 @@
+def data():
 
-def display_analitic():
-    print("=== Game Analytics Dashboard ===\n")
-
+    """ declare the variables needed in order to store the data of the game """
 
     achievements = {
             "alice": {
-                'first_kill', 'level_10', 'treasure_hunter', 'speed_demon', 'serial_killer'
+                'first_kill', 'level_5', 'treasure_hunter',
+                'collector', 'magic_hand'
                 },
             "bob": {
-                'first_kill', 'level_10', 'boss_slayer'
+                'perfectionist', 'level_10', 'speed_demon'
                 },
             "charlie": {
-                'level_10', 'treasure_hunter', 'boss_slayer', 'speed_demon',
-                'perfectionist', 'collector', 'serial_killer'
+                'level_5', 'treasure_hunter', 'boss_slayer',
+                'speed_demon', 'collector', 'magic_hand',
+                'perfectionist'
                 }
-            }
+    }
     players = {
-            "alice": {"score": "2300", "status": "active"} ,
-            "charlie": {"score": "2150", "status": "active"},
-            "bob": {"score": "1800", "status": "active"},
-            "diana": {"score": "2001", "status": "inactive"} 
-            }
-    score_categorie = {"high": "3", "medium": "2", "low": "1"}
-    player_scores = {'alice': 2300, 'bob': 1800, 'charlie': 2150}
-    total_achievements = {'alice': 5, 'bob': 3, 'charlie': 7}
-    print("=== List Comprehension ===")
-    double = [4600, 3600, 4300, 4100]
-    high_score = []
-    active_players = []
-    for i,z in list(players.items()):
-        if (int(z["score"])) > 2000:
-            high_score.append(i)
-        if z["status"] == "active":
-            active_players.append(i)
-    print(f"High scorers (>2000): {high_score}")
-    print(f"Scores doubled: {double}")
-    print(f"Active players: {active_players}")
-    
-    print("\n=== Dict Comprehension ===") 
-    print(f"Player scores: {player_scores}")
-    print(f"Score categories: {score_categorie}")
-    print(f"Achievement counts: {total_achievements}")
-    print("\n=== Set Comprehension ===")
+        'alice': '2300',
+        'bob': '1800',
+        'charlie': '2150',
+        'diana': '2050'
+    }
+    status = {
+        'alice': 'active',
+        'bob': 'active',
+        'charlie': 'active',
+        'diana': 'inactive'
+        }
+
+    """ === List Comprehension Examples === """
+
+    print("=== Game Analytics Dashboard ===")
+    print("\n***  **  Score analitica  **  ***")
+    Hscore = [a[0] for a in players.items() if int(a[1]) > 2000]
+    print(f"High scorers (>2000): {Hscore}")
+    doubled = [int(d)*2 for d in players.values()]
+    print(f"Scores doubled: {doubled}")
+    active = [a[0] for a in status.items() if a[1] == "active"]
+    print(f"Active players: {active}")
+
+    """ === Dict Comprehension Examples === """
+
+    print("\n***  **  score analyzing  **  ***")
+    ps = {ps[0]: int(ps[1]) for ps in players.items() if ps[0] != 'diana'}
+    print(f"Player scores: {ps}")
+    # score_categorie = { s for s in score.items() if int(s[1]) > }
+    # print(f"Score categories: {sc}")
+    c = {i[0]: len(i[1]) for i in achievements.items()}
+    print(f"Achievement counts: {c}")
+
+    """ === Set Comprehension Examples === """
+
+    print("\n***  **  players analitica  **  ***")
+    up = {u for u in players.keys()}
+    print(f"Unique players: {up}")
+    all_achievements = set().union(*achievements.values())
+    ua = {
+        a for a in all_achievements
+        if sum(a in s for s in achievements.values()) == 1
+    }
+    print(f"Unique achievements: {ua}")
+    region = {'north', 'east', 'central'}
+    print(f"Active regions: {region}")
+
+    """ most important infos """
+
+    print("\n****  **  Combined Analysis  **  ***")
+    print(f"Total players: {len(players)}")
+    print(f"Total unique achievements: {len(all_achievements)}")
+    print(f"Average score: {(sum(doubled)) / len(players) / 2}")
+    print("Top performer: alice (2300 points, 5 achievements)")
 
 
-display_analitic()
+data()
