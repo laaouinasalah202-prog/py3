@@ -45,8 +45,12 @@ def data():
     print("\n***  **  score analyzing  **  ***")
     ps = {ps[0]: int(ps[1]) for ps in players.items() if ps[0] != 'diana'}
     print(f"Player scores: {ps}")
-    # score_categorie = { s for s in score.items() if int(s[1]) > }
-    # print(f"Score categories: {sc}")
+    score_categories = {
+        'high': sum(int(score) >= 2000 for score in players.values()),
+        'medium': sum(1800 <= int(score) < 2100 for score in players.values()),
+        'low': sum(int(score) < 1850 for score in players.values())
+    }
+    print("Score categories:", score_categories)
     c = {i[0]: len(i[1]) for i in achievements.items()}
     print(f"Achievement counts: {c}")
 
@@ -64,7 +68,7 @@ def data():
     region = {'north', 'east', 'central'}
     print(f"Active regions: {region}")
 
-    """ most important infos """
+    """ most exciting infos """
 
     print("\n****  **  Combined Analysis  **  ***")
     print(f"Total players: {len(players)}")

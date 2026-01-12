@@ -2,6 +2,7 @@ import sys
 
 
 def ft_command_quest():
+    """" receive arguments using sys.argv and filter them """
     i = 1
     print("=== Command Quest ===")
 

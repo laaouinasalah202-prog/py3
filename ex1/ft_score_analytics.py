@@ -3,7 +3,8 @@ import sys
 
 def ft_score_analytics():
     print("=== Player Score Analytics ===")
-
+    """" receive arguments from the terminal and display the score infos """
+    print(sys.argv)
     try:
         if len(sys.argv) == 1:
             raise ValueError()
@@ -21,6 +22,7 @@ def ft_score_analytics():
         print(f"High score: {mx}")
         print(f"Low score: {mn}")
         print(f"Score range: {r}")
+        """ raise error if no argument are received """
     except ValueError:
         print(
             "No scores provided. Usage: "

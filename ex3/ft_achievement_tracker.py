@@ -16,7 +16,7 @@ def AchievementTracker():
                 },
             "charlie": {
                 'level_10', 'treasure_hunter', 'boss_slayer', 'speed_demon',
-                'perfectionist'
+                'perfectionist',
                 }
             }
 
