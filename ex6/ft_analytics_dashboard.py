@@ -33,8 +33,8 @@ def data():
 
     print("=== Game Analytics Dashboard ===")
     print("\n***  **  Score analitica  **  ***")
-    Hscore = [a[0] for a in players.items() if int(a[1]) > 2000]
-    print(f"High scorers (>2000): {Hscore}")
+    h_score = [a[0] for a in players.items() if int(a[1]) > 2000]
+    print(f"High scorers (>2000): {h_score}")
     doubled = [int(d)*2 for d in players.values()]
     print(f"Scores doubled: {doubled}")
     active = [a[0] for a in status.items() if a[1] == "active"]
